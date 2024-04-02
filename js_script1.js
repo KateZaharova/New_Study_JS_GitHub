@@ -138,7 +138,7 @@ if ( 1<5) {
     console.log("Happy birthday!");
 } else {
     console.log("How do you do?");
-};*/
+};
 
 const salary = 300;
 
@@ -152,4 +152,17 @@ if (salary <= 500) {
     console.log("Level 4");
 }
 
-console.log("bla-bla-bla");
+console.log("bla-bla-bla");*/
+
+const balance = 1000;
+let message;
+
+/*if (balance >= 0) {
+    console.log(message = `Positive balance`);
+} else {
+    console.log(message = `Negative balance`);
+};*/
+
+const res = balance >= 0 ? `Positive balance` : `Negative balance`;
+
+console.log(res);
