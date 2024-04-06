@@ -152,17 +152,76 @@ if (salary <= 500) {
     console.log("Level 4");
 }
 
-console.log("bla-bla-bla");*/
-
+console.log("bla-bla-bla");
 const balance = 1000;
 let message;
 
-/*if (balance >= 0) {
+if (balance >= 0) {
     console.log(message = `Positive balance`);
 } else {
     console.log(message = `Negative balance`);
-};*/
+};
 
 const res = balance >= 0 ? `Positive balance` : `Negative balance`;
 
-console.log(res);
+console.log(res);*/
+
+const star = 4;
+let price;
+
+/*if (star === 1 || star === 2) {
+    price = 20;
+} else if (star === 3 || star === 4){
+    price = 70;
+} else if (star === 5) {
+    price = 120;
+} else {
+    console.log("No hotel with such star");
+};
+
+switch (star){
+    case 1:
+    case 2:
+        price = 20;
+        break;
+    case 3:
+    case 4:
+        price = 70;
+        break;
+    case 5:
+        price = 120;
+        break;
+    default:
+        console.log("No hotel with such star");
+};
+
+console.log(price);
+
+const option = 4;
+let message = "";
+
+switch (option) {
+    case 1:
+        message = "You can leave your head on";
+        break;
+    case 2:
+        message = "Hello world!";
+        break;
+    case 3:
+        message = "So far, so good";
+        break;
+    default:
+        message = "Our manager will contact you";
+};
+console.log(message);
+
+for (инициализация; условие; пост - выражение){
+    //тело цикла
+};*/
+
+
+
+for (let i = 10; i >= -10; i -= 2){
+    console.log(i);
+};
+console.log("Rainy day!")
