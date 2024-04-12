@@ -217,7 +217,7 @@ console.log(message);
 
 for (инициализация; условие; пост - выражение){
     //тело цикла
-};*/
+};
 
 
 
@@ -225,3 +225,67 @@ for (let i = 10; i >= -10; i -= 2){
     console.log(i);
 };
 console.log("Rainy day!")
+
+
+const minSalary = 500;
+const maxSalary = 5000;
+const employees = 7;
+let totalSalary = 0;
+
+for (let i = 1; i <= employees; i += 1){
+    const salary = Math.round(Math.random() * (maxSalary - minSalary) + minSalary);
+
+    console.log(`Employee's salary # ${i} - ${salary}`);
+
+    totalSalary += salary;
+}
+console.log(`Total salary: `, totalSalary);
+
+const min = 3;
+const max = 6;
+let total = 0;
+
+for (let i = min; i <= max; i += 1){
+    if (i % 2 !== 0) {
+        console.log(`Не четное: `, i);
+        continue;
+    }
+
+    console.log(`Четное :`, i);
+    total += i; 
+}
+console.log(`total: `, total);
+
+let balance = 1000;
+const payment = 1005;
+
+console.log(`Total order amount is: ${payment}. We heck the available amount on your account.`);
+
+if (payment <= balance) {
+    console.log(`Ok. Withdrow -${payment}.`)
+    balance = balance - payment; // balance -=payment;
+    console.log(`The rest on your amount is ${balance}.`);
+} else (
+    console.log(`Not enough money on your account. Sorry((`)
+);
+
+console.log(`Operation is finished.`)*/
+
+const totalSpent = 5000;
+let payment = 5;
+let discount = 0;
+
+if (totalSpent >= 100 && totalSpent < 1000) {
+    discount = 0.02;
+    console.log(`Bronze partner the discount is 2%`);
+} else if (totalSpent >= 1000 && totalSpent < 5000) {
+    discount = 0.05;
+    console.log(`Silver partner the discount is 5%`);
+} else if (totalSpent >= 5000) {
+      discount = 0.1;
+    console.log(`Gold partner the discount is 10%`);
+} else {
+    console.log(`Not a partner the discount is 0%`);
+}
+
+console.log(`The order is under production on amount ${payment}credits at discount ${discount*100}%.`)
