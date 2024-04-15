@@ -269,7 +269,7 @@ if (payment <= balance) {
     console.log(`Not enough money on your account. Sorry((`)
 );
 
-console.log(`Operation is finished.`)*/
+console.log(`Operation is finished.`)
 
 const totalSpent = 5000;
 let payment = 5;
@@ -289,3 +289,52 @@ if (totalSpent >= 100 && totalSpent < 1000) {
 }
 
 console.log(`The order is under production on amount ${payment}credits at discount ${discount*100}%.`)
+
+
+function checkForSpam(message) {
+    let result;
+  // Change code below this line
+    const spam1 = "spam";
+    const spam2 = "sale";
+    
+if(message.toLowerCase().includes(spam1) || message.toLowerCase().includes(spam2)){
+    result=true;
+} else
+    result = false;
+
+  // Change code above this line
+  return result;
+}
+
+console.log(checkForSpam("Get best sale offers now!"));
+
+
+function sayHi(){
+  console.log("Hello, this is my first function!")
+};
+
+sayHi();
+
+function add(a, b, c) {
+  // Change code below this line
+
+return a+b+c;
+
+  // Change code above this line
+}
+
+add(2, 5, 8); // 15
+
+console.log(add(15, 27, 10));
+console.log(add(10, 20, 30));
+console.log(add(5, 10, 15));
+console.log(add(17, 10, 13));*/
+
+function makeMessage (name, price) {
+  // Change code below this line
+   const message = `You picked ${name}, price per item is ${price} credits`;
+  // Change code above this line
+  return message;
+};
+
+console.log(makeMessage('Radar', 6150));
