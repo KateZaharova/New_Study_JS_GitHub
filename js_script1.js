@@ -623,5 +623,124 @@ console.log(checkForSpam("Amazing SalE, only tonight!"));
 console.log(checkForSpam("Trust me, this is not a spam message"));
 console.log(checkForSpam("Get rid of sPaM emails. Our book in on sale!"));
 console.log(checkForSpam("[SPAM] How to earn fast money?"));
+
+
+const clients = ["Mango", "Ajax", "Poly"];
+
+for (const client of clients) {
+  console.log(client);
+}
+
+const string = "javascript";
+
+for (const character of string) {
+  console.log(character);
+}
+
+
+const item = "Mango";
+console.log(item.split(''));
+
+const message = "JavaScript - is very interesting";
+console.log(message.split(' '));
+console.log(message.slice(0, 5));
+console.log(message.join(''));
+
+const message = ["JavaScript", "is", "very", "interesting"];
+console.log(message.join("-"));
+
+
+const clients = ["Mango", "Ajax", "Poly", "Kiwi"];
+console.log(clients.indexOf("Ajax"));
+console.log(clients.includes("Mongo"));
+console.log(clients.includes("Kiwi"));
+
+
+const redFruits = ["apple", "strawberry", "cherry", "cranberries"];
+const fruit = "cherry";
+
+const hasFruit = redFruits.includes(fruit);
+
+if (hasFruit) {
+    console.log(`${fruit} is a red fruit!`)
+};
+
+const numbers = [6,9,11,13,15,17];
+console.log(numbers.push(11));
+console.log(numbers);
+console.log(numbers.pop());
+console.log(numbers);
+console.log(numbers.pop());
+console.log(numbers.pop());
+console.log(numbers.pop());
+console.log(numbers);
+
+
+const colors = ["green", "yellow", "red", "pink", "blue", "violet"];
+//console.log(colors.splice(3, 1));
+console.log(colors.splice(2, 1, "black", "white"))
+console.log(colors);
+
+
+const cart = [54, 28, 105, 11, 15, 26, 78, 95, 41,56,57,85];
+let total = 0;
+
+//for (const cart of carts)
+
+ for (let i = 0; i < cart.length; i += 1)
+  {
+  total += cart[i];
+};
+
+console.log(`Total: `, total);
+
+
+const redFruits = ["apple", "strawberry", "cherry", "cranberries"];
+
+
+for (let i = 0; i < redFruits.length; i += 1){
+console.log([i]+`) ` + redFruits[i])  
+}
+
+for (const fruit of redFruits) {
+  console.table(fruit + `-1`)
+}
+const cart = [54, 28, 105, 11, 15, 26, 78, 95, 41,56,57,85];
+
+/*for (let i = 0; i < cart.length; i+=1) {
+  if (cart[i] % 2 === 0) {
+    console.log(`Четное: `, cart[i]);
+  }
+}
+
+for (const item of cart) {
+  //console.log(item)
+  let message = item % 2 === 0
+    ? `Четное: ${item}`
+    : `Не четное: ${item}`;
+  console.log(message);
+};
 */
 
+const cart = [54, 28, 105, 11, 15, 26, 78, 95, 41,56,57,85, 2];
+//the smallest number
+/*let smallestNumber = cart[0];
+
+for (let i = 0; i < cart.length; i+=1) {
+  
+  if (cart[i] < smallestNumber) {
+    smallestNumber = cart[i];    
+  } 
+}
+console.log(smallestNumber);*/
+
+// the biggest number
+let biggestNumber = cart[0];
+
+for (const item of cart) {
+  if (item > biggestNumber) {
+    biggestNumber = item;
+  }
+};
+
+console.log(biggestNumber);
