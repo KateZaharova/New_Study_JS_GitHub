@@ -720,11 +720,11 @@ for (const item of cart) {
     : `Не четное: ${item}`;
   console.log(message);
 };
-*/
+
 
 const cart = [54, 28, 105, 11, 15, 26, 78, 95, 41,56,57,85, 2];
 //the smallest number
-/*let smallestNumber = cart[0];
+let smallestNumber = cart[0];
 
 for (let i = 0; i < cart.length; i+=1) {
   
@@ -732,7 +732,7 @@ for (let i = 0; i < cart.length; i+=1) {
     smallestNumber = cart[i];    
   } 
 }
-console.log(smallestNumber);*/
+console.log(smallestNumber);
 
 // the biggest number
 let biggestNumber = cart[0];
@@ -744,3 +744,18 @@ for (const item of cart) {
 };
 
 console.log(biggestNumber);
+*/
+
+const string = "JavaScript";
+let inversedString = '';
+
+for (const item of string){
+  console.log(item);
+
+  inversedString = item === item.toUpperCase() 
+    ? inversedString += item.toLocaleLowerCase()
+    : inversedString += item.toLocaleUpperCase()
+
+ 
+}
+ console.log(inversedString)
