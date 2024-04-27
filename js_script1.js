@@ -744,7 +744,7 @@ for (const item of cart) {
 };
 
 console.log(biggestNumber);
-*/
+
 
 const string = "JavaScript";
 let inversedString = '';
@@ -755,7 +755,24 @@ for (const item of string){
   inversedString = item === item.toUpperCase() 
     ? inversedString += item.toLocaleLowerCase()
     : inversedString += item.toLocaleUpperCase()
-
- 
 }
- console.log(inversedString)
+ console.log(inversedString);
+*/
+
+function includes(array, value) {
+  // Change code below this line
+  let message = '';
+
+  for (let i = 0; i < array.length; i += 0){
+    //for (const item of array) {
+   // console.log(i)
+
+    /*if (value === array[i]) {
+      message = "true";
+    } message = "false";*/
+  }
+    // Change code above this line
+  }
+
+console.log(includes([1, 2, 3, 4, 5], 3));
+
