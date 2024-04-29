@@ -759,20 +759,57 @@ for (const item of string){
  console.log(inversedString);
 */
 
-function includes(array, value) {
+/*function includes(array, value) {
   // Change code below this line
   let message = '';
+  const args = Array.from(array);
+  console.log(value);
 
-  for (let i = 0; i < array.length; i += 0){
-    //for (const item of array) {
-   // console.log(i)
 
-    /*if (value === array[i]) {
-      message = "true";
-    } message = "false";*/
-  }
+  for (let item = 0; item < args.length; item += 1) {
+    //console.log(args);
+    console.log(args[4]>value);
+
+    message = args[item] === value ? true : false;
+
+   /* if (args[item] === value ) {
+      return message = "true";
+    } else {
+      message = "false";
+    }
     // Change code above this line
   }
+}
+console.log(includes([1, 2, 3, 4, 5], 17));
 
-console.log(includes([1, 2, 3, 4, 5], 3));
+function includes(array, value) {
+  // Change code below this line
 
+  for (let item = 0; item < array.length; item += 1) {
+
+    if (array[item] === value) {
+      return true;
+    }
+  }
+      return false;
+    
+    // Change code above this line
+  }
+console.log(includes[1, 2, 3, 4, 5], 17);
+*/
+
+function checkAge(age) {
+ 
+
+  if (age>=18) { // Change this line
+    return "You are an adult";
+  }
+  return "You are a minor";
+  
+ 
+}    
+
+  
+
+
+console.log(checkAge(17));
