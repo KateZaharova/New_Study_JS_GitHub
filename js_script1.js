@@ -1133,7 +1133,7 @@ for (let i = start; i < end; i += 1) {
 }
 
 console.log(number);
-*/
+
 
 function findNumber(start, end, divisor) {
   // Change code below this line
@@ -1150,3 +1150,152 @@ function findNumber(start, end, divisor) {
 }
 
 console.log(findNumber(16, 35, 7));
+
+//--------------------------------------------------------
+
+const bookShelf = {
+  books: ["The Last Kingdom"],
+  getBooks() {
+    return this.books;
+  },
+  addBook(bookName) {
+    this.books.push(bookName);
+  },
+  removeBook(bookName) {
+    const bookIndex = this.books.indexOf(bookName);
+    this.books.splice(bookIndex, 1);
+  }
+};
+
+console.log(bookShelf.getBooks());
+bookShelf.addBook("The Mist");
+bookShelf.addBook("Dream Guardian");
+bookShelf.removeBook("The Mist");
+
+
+const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  genres: ["historical prose", "adventure"],
+  rating: 8.38,
+};
+
+for (const key in book) {
+ // console.log(key);
+  //console.log(book[key]);
+};
+
+const animal = {
+  legs: 4,
+  ears: 2,
+  tail: 1,
+  eyes:2,
+};
+const dog = Object.create(animal);
+dog.name = "Mango";
+
+//console.log(dog);
+//console.log(animal);
+//console.log(dog.name);
+//console.log(dog.legs);
+
+//console.log("ears" in animal);
+//console.log("legs" in animal);
+
+//console.log(animal.hasOwnProperty("name"));
+//console.log(animal.hasOwnProperty("legs"));
+
+for (const key in dog) {
+  if (dog.hasOwnProperty(key)) {
+    console.log(key);
+    console.log(dog[key]);
+  }
+}
+
+const animal = {
+  legs: 4,
+  ears: 2,
+  tail: 1,
+  eyes: 2,
+  breed: "вівчарка",
+  nickname: "Dude",
+};
+const dog = Object.create(animal);
+dog.name = "Mango";
+
+const keys = Object.keys(animal);
+console.log(keys);
+const values = Object.values(animal);
+console.log(values);
+
+for (const key of values) {
+ // console.log(key);
+  //console.log(animal[key]);
+};
+
+
+const goods = {
+  apples: 6,
+  grapes: 3,
+  bread: 4,
+  cheese: 7,
+};
+
+const values = Object.values(goods);
+console.log(values);
+
+const entries = Object.entries(goods);
+console.log(entries);
+
+let total = 0
+
+for (const key of values) {
+  total += key;
+  
+};
+console.log(total);
+
+const fn = function (a, b, c, ...args) {
+  console.log(`${a}, ${b}, ${c}`);
+  console.log(args);
+}
+
+fn("hello", 1, 2, 3, 4);
+fn("Mars", 1, 2, 3, 4, 5);
+fn("Moon", 1, 2, 3, 4, 5, 6);
+
+
+const add = function (...args) {
+  //console.log(args);
+  let total = 0;
+
+  for (const arg of args) {
+    total += arg
+  };
+
+  return total;
+
+};
+
+console.log(add(1, 2, 3));
+console.log(add(1, 2, 3, 4, 5, 6));*/
+
+const filteredNumbers = function (array, ...args) {
+  //console.log(args);
+  //console.log(array);
+
+  let newArray = [];
+
+  for (const number of array) {
+    if (args.includes(number)) {
+      newArray.push(number);
+    }
+    
+  }
+  return newArray;
+}
+
+
+console.log(filteredNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));
+console.log(filteredNumbers([10, 15, 25, 30], 23, 30, 18, 15));
+console.log(filteredNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64));
