@@ -1278,7 +1278,7 @@ const add = function (...args) {
 };
 
 console.log(add(1, 2, 3));
-console.log(add(1, 2, 3, 4, 5, 6));*/
+console.log(add(1, 2, 3, 4, 5, 6));
 
 const filteredNumbers = function (array, ...args) {
   //console.log(args);
@@ -1299,3 +1299,62 @@ const filteredNumbers = function (array, ...args) {
 console.log(filteredNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));
 console.log(filteredNumbers([10, 15, 25, 30], 23, 30, 18, 15));
 console.log(filteredNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64));
+
+
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "На березі спокійних вод",
+    author: "Роберт Шеклі",
+    rating: 8.51,
+  },
+  {
+    title: "Сон смішної людини",
+    author: "Федір Достоєвський",
+    rating: 7.75,
+  },
+];
+
+//for (const book of books) {
+ // console.log(book);
+  //console.log(book.title);
+  //console.log(book.author);
+  //console.log(book.rating);
+//}
+
+//const bookNames = [];
+
+//for (const book of books) {
+//  bookNames.push(book.title)
+//}
+//console.log(bookNames);
+
+let total = 0;
+let avarageRating = 0;
+
+for (const book of books) {
+  total += book.rating;
+  avarageRating = (total /books.length).toFixed(2);
+}
+console.log(avarageRating);
+
+
+const temps = [14, -4, 25, 8, 11];
+console.log(temps);
+console.log(Math.max(...temps));
+*/
+function multiply(firstNumber, secondNumber, ...otherArgs) {
+  console.log(firstNumber); // Значення першого аргументу
+  console.log(secondNumber); // Значення другого аргументу
+  console.log(otherArgs); // Масив інших аргументів
+}
+
+multiply(1, 2);
+multiply(1, 2, 3);
+multiply(1, 2, 3, 4);
+
+
