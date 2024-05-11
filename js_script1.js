@@ -1346,7 +1346,7 @@ console.log(avarageRating);
 const temps = [14, -4, 25, 8, 11];
 console.log(temps);
 console.log(Math.max(...temps));
-*/
+
 function multiply(firstNumber, secondNumber, ...otherArgs) {
   console.log(firstNumber); // Значення першого аргументу
   console.log(secondNumber); // Значення другого аргументу
@@ -1357,4 +1357,92 @@ multiply(1, 2);
 multiply(1, 2, 3);
 multiply(1, 2, 3, 4);
 
+
+const playlist = {
+  name: "My play list",
+  rating: 5,
+  tracks: ["track1", "track2", "track3"],
+  trackCount: 3,
+  changeName(newName) {
+    console.log(`this всередині changeName: `, this);
+
+    this.name = newName;
+  },
+  addTrack(newTrack) {
+    this.tracks.push(newTrack);
+  },
+  changeRating(newRating) {
+    this.rating = newRating;
+  },
+}
+
+playlist.changeName("New SUPER-PUPER NAME");
+playlist.addTrack("New track ABBA");
+playlist.changeRating(10);
+//console.log(playlist.trackCount);
+
+playlist.qweqwe = 10;
+playlist.trackCount = 10;
+
+
+console.log(playlist);
+
+
+const x = { a: 1, b: 2, c: 3 };
+const y = { a: 5, d: 5, y: 8, c: 1 }
+
+const w = { ...x, ...y };
+console.log(w);
+
+
+const showProfileInfo = function (userProfile){
+  const {
+    name,
+    tag,
+    location,
+    avatar,
+    stats: { followers, views, likes },
+  } = userProfile; 
+
+  console.log(name, tag, location, avatar, followers, views, likes);
+  };
+
+const profile = {
+  name: "Jac Kusto",
+  tag: "jcusto",
+  location: "Monaco",
+  avatar: "http://......jpg",
+  stats: {
+    followers: 5555,
+    views: 4444,
+    likes: 1111,
+  },
+};
+
+showProfileInfo(profile);
+*/
+
+const cart = {
+  items: [],
+  getItems() { 
+    return this.items;
+  },
+  add(product) {
+    this.items.push(product);
+  },
+  remove(productName) { },
+  clear() { },
+  countTotalPrice() { },
+  increaseQuantity(productName) { },
+  decreaseQuantity(productName) { },
+};
+
+
+cart.add({ name: "apple", price: 50 });
+cart.add({ name: "lemon", price: 60 });
+cart.add({ name: "peach", price: 60 });
+cart.add({ name: "tomato", price: 110 });
+
+
+console.table(cart.getItems());
 
