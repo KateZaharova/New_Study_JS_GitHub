@@ -1632,7 +1632,7 @@ function getProductPrice(productName) {
 console.log(getProductPrice("Radar"));
 console.log(getProductPrice("Engine"));
 console.log(getProductPrice("Scanner"));
-*/
+
 
 const products = [
   { name: "Radar", price: 1300, quantity: 4 },
@@ -1641,33 +1641,87 @@ const products = [
   { name: "Grip", price: 1200, quantity: 9 },
 ];
 
-//const keys = [];
-//const valueArray = []
+
 
 function getAllPropValues(propName) {
   // Change code below this line
+
+  const valueArray = []; 
+  
+
   for (const product of products) {
-
-    const keys = Object.keys(product);
-    console.log(keys[propName]);
-
-
-    const values = Object.values(product);
-    console.log(values[0]);
-
-    if (Object.values(product)) {
-     // return values;
+    if (product.hasOwnProperty([propName])) {
       
+      let valuesOfPropName = product[propName];
+      
+      valueArray.push(valuesOfPropName);
     }
   }
-  //return [];
+  return valueArray;
 }
   // Change code above this line
 
-
-//console.log(getAllPropValues("name")); //["Radar", "Scanner", "Droid", "Grip"])
-//console.log(getAllPropValues("quantity"));
+console.log(getAllPropValues("name")); //["Radar", "Scanner", "Droid", "Grip"])
+console.log(getAllPropValues("quantity"));
 console.log(getAllPropValues("price"));
+console.log(getAllPropValues("category"));
+
+
+
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+function calculateTotalPrice(productName) {
+  // Change code below this line
+
+  let totalAmount = 0;
+
+  for (const product of products) {
+
+    let nameToFind = product.name
+   
+    if (nameToFind === productName) {
+      
+      totalAmount = product.price * product.quantity
+  
+    }
+    
+    // Change code above this line
+  }
+  return totalAmount;
+}
+
+console.log(calculateTotalPrice("Blaster"));// 0
+console.log(calculateTotalPrice("Radar"));// 5200)
+
+
+
+
+const highTemperatures = {
+  yesterday: 28,
+  today: 26,
+  tomorrow: 33,
+};
+// Change code below this line
+
+const {yesterday, today, tomorrow } = highTemperatures;
+
+//const yesterday = highTemperatures.yesterday;
+//const today = highTemperatures.today;
+//const tomorrow = highTemperatures.tomorrow;
+
+// Change code above this line
+const meanTemperature = (yesterday + today + tomorrow) / 3;
+
+console.log(meanTemperature);
+*/
+
+
+
 
 
 
