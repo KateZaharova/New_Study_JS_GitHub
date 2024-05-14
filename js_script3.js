@@ -1,3 +1,4 @@
+
 const highTemperatures = {
   yesterday: 28,
   today: 26,
