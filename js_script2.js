@@ -1,4 +1,4 @@
-const season = "spring";
+const season = "summer";
 
         if (season === "winter"){
             conslole.log("Зима");

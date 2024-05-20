@@ -1133,7 +1133,7 @@ for (let i = start; i < end; i += 1) {
 }
 
 console.log(number);
-*/
+
 
 function findNumber(start, end, divisor) {
   // Change code below this line
@@ -1150,3 +1150,603 @@ function findNumber(start, end, divisor) {
 }
 
 console.log(findNumber(16, 35, 7));
+
+//--------------------------------------------------------
+
+const bookShelf = {
+  books: ["The Last Kingdom"],
+  getBooks() {
+    return this.books;
+  },
+  addBook(bookName) {
+    this.books.push(bookName);
+  },
+  removeBook(bookName) {
+    const bookIndex = this.books.indexOf(bookName);
+    this.books.splice(bookIndex, 1);
+  }
+};
+
+console.log(bookShelf.getBooks());
+bookShelf.addBook("The Mist");
+bookShelf.addBook("Dream Guardian");
+bookShelf.removeBook("The Mist");
+
+
+const book = {
+  title: "The Last Kingdom",
+  author: "Bernard Cornwell",
+  genres: ["historical prose", "adventure"],
+  rating: 8.38,
+};
+
+for (const key in book) {
+ // console.log(key);
+  //console.log(book[key]);
+};
+
+const animal = {
+  legs: 4,
+  ears: 2,
+  tail: 1,
+  eyes:2,
+};
+const dog = Object.create(animal);
+dog.name = "Mango";
+
+//console.log(dog);
+//console.log(animal);
+//console.log(dog.name);
+//console.log(dog.legs);
+
+//console.log("ears" in animal);
+//console.log("legs" in animal);
+
+//console.log(animal.hasOwnProperty("name"));
+//console.log(animal.hasOwnProperty("legs"));
+
+for (const key in dog) {
+  if (dog.hasOwnProperty(key)) {
+    console.log(key);
+    console.log(dog[key]);
+  }
+}
+
+const animal = {
+  legs: 4,
+  ears: 2,
+  tail: 1,
+  eyes: 2,
+  breed: "вівчарка",
+  nickname: "Dude",
+};
+const dog = Object.create(animal);
+dog.name = "Mango";
+
+const keys = Object.keys(animal);
+console.log(keys);
+const values = Object.values(animal);
+console.log(values);
+
+for (const key of values) {
+ // console.log(key);
+  //console.log(animal[key]);
+};
+
+
+const goods = {
+  apples: 6,
+  grapes: 3,
+  bread: 4,
+  cheese: 7,
+};
+
+const values = Object.values(goods);
+console.log(values);
+
+const entries = Object.entries(goods);
+console.log(entries);
+
+let total = 0
+
+for (const key of values) {
+  total += key;
+  
+};
+console.log(total);
+
+const fn = function (a, b, c, ...args) {
+  console.log(`${a}, ${b}, ${c}`);
+  console.log(args);
+}
+
+fn("hello", 1, 2, 3, 4);
+fn("Mars", 1, 2, 3, 4, 5);
+fn("Moon", 1, 2, 3, 4, 5, 6);
+
+
+const add = function (...args) {
+  //console.log(args);
+  let total = 0;
+
+  for (const arg of args) {
+    total += arg
+  };
+
+  return total;
+
+};
+
+console.log(add(1, 2, 3));
+console.log(add(1, 2, 3, 4, 5, 6));
+
+const filteredNumbers = function (array, ...args) {
+  //console.log(args);
+  //console.log(array);
+
+  let newArray = [];
+
+  for (const number of array) {
+    if (args.includes(number)) {
+      newArray.push(number);
+    }
+    
+  }
+  return newArray;
+}
+
+
+console.log(filteredNumbers([1, 2, 3, 4, 5], 10, 15, 2, 3, 8));
+console.log(filteredNumbers([10, 15, 25, 30], 23, 30, 18, 15));
+console.log(filteredNumbers([100, 200, 300, 400, 500], 7, 12, 200, 64));
+
+
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "На березі спокійних вод",
+    author: "Роберт Шеклі",
+    rating: 8.51,
+  },
+  {
+    title: "Сон смішної людини",
+    author: "Федір Достоєвський",
+    rating: 7.75,
+  },
+];
+
+//for (const book of books) {
+ // console.log(book);
+  //console.log(book.title);
+  //console.log(book.author);
+  //console.log(book.rating);
+//}
+
+//const bookNames = [];
+
+//for (const book of books) {
+//  bookNames.push(book.title)
+//}
+//console.log(bookNames);
+
+let total = 0;
+let avarageRating = 0;
+
+for (const book of books) {
+  total += book.rating;
+  avarageRating = (total /books.length).toFixed(2);
+}
+console.log(avarageRating);
+
+
+const temps = [14, -4, 25, 8, 11];
+console.log(temps);
+console.log(Math.max(...temps));
+
+function multiply(firstNumber, secondNumber, ...otherArgs) {
+  console.log(firstNumber); // Значення першого аргументу
+  console.log(secondNumber); // Значення другого аргументу
+  console.log(otherArgs); // Масив інших аргументів
+}
+
+multiply(1, 2);
+multiply(1, 2, 3);
+multiply(1, 2, 3, 4);
+
+
+const playlist = {
+  name: "My play list",
+  rating: 5,
+  tracks: ["track1", "track2", "track3"],
+  trackCount: 3,
+  changeName(newName) {
+    console.log(`this всередині changeName: `, this);
+
+    this.name = newName;
+  },
+  addTrack(newTrack) {
+    this.tracks.push(newTrack);
+  },
+  changeRating(newRating) {
+    this.rating = newRating;
+  },
+}
+
+playlist.changeName("New SUPER-PUPER NAME");
+playlist.addTrack("New track ABBA");
+playlist.changeRating(10);
+//console.log(playlist.trackCount);
+
+playlist.qweqwe = 10;
+playlist.trackCount = 10;
+
+
+console.log(playlist);
+
+
+const x = { a: 1, b: 2, c: 3 };
+const y = { a: 5, d: 5, y: 8, c: 1 }
+
+const w = { ...x, ...y };
+console.log(w);
+
+
+const showProfileInfo = function (userProfile){
+  const {
+    name,
+    tag,
+    location,
+    avatar,
+    stats: { followers, views, likes },
+  } = userProfile; 
+
+  console.log(name, tag, location, avatar, followers, views, likes);
+  };
+
+const profile = {
+  name: "Jac Kusto",
+  tag: "jcusto",
+  location: "Monaco",
+  avatar: "http://......jpg",
+  stats: {
+    followers: 5555,
+    views: 4444,
+    likes: 1111,
+  },
+};
+
+showProfileInfo(profile);
+
+
+const apartment = {
+  imgUrl: "https://via.placeholder.com/640x480",
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+  tags: ["premium", "promoted", "top"],
+  owner:{
+    name:"Henry",
+    phone: "982-126-1588",
+    email: "henry.carter@aptmail.com",  
+  },
+};
+
+
+const apartment = {
+  imgUrl: "https://via.placeholder.com/640x480",
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+  tags: ["premium", "promoted", "top"],
+  owner: {
+    name: "Henry",
+    phone: "982-126-1588",
+    email: "henry.carter@aptmail.com",
+  },
+};
+
+// Change code below this line
+const ownerName = apartment.owner.name;
+const ownerPhone = apartment.owner.phone;
+const ownerEmail = apartment.owner.email;
+const numberOfTags = apartment.tags.length;
+const firstTag = apartment.tags[0];
+const lastTag = apartment.tags[apartment.tags.length-1]
+// Change code above this line
+
+
+const apartment = {
+  imgUrl: "https://via.placeholder.com/640x480",
+  descr: "Spacious apartment in the city center",
+  rating: 4.7,
+  price: 5000,
+  tags: ["premium", "promoted", "top", "trusted"],
+  owner: {
+    name: "Henry Sibola",
+    phone: "982-126-1588",
+    email: "henry.carter@aptmail.com",
+  },
+};
+
+// Change code below this line
+apartment.area = 60;
+apartment.rooms = 3;
+apartment.location={
+  country:"Jamaica",
+    city:"Kingston",
+};
+
+
+const apartment = {
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+};
+const keys = [];
+const values = [];
+// Change code below this line
+for (const key in apartment) {
+  keys.push(key);
+  values.push(apartment[key])
+};
+console.log(keys);
+console.log(values);
+
+
+function countProps(object) {
+  let propCount = 0;
+  // Change code below this line
+  for (const key in object) {
+    if (object.hasOwnProperty(key)) {
+      propCount += 1;
+    }
+}
+  // Change code above this line
+  return propCount;
+}
+
+console.log(countProps({ name: "Mango", age: 2 }));
+console.log(countProps({ mail: "poly@mail.com", isOnline: true, score: 500 }));
+console.log(countProps({}));
+
+
+const apartment = {
+  descr: "Spacious apartment in the city center",
+  rating: 4,
+  price: 2153,
+};
+const values = [];
+// Change code below this line
+const keys = Object.keys(apartment);
+
+for (const key of keys) {
+  values.push(apartment[key]);
+}
+console.log(values);
+console.log(keys);
+
+
+function countProps(object) {
+  // Change code below this line
+  let propCount = 0;
+
+  const keys = Object.keys(object);
+    propCount = keys.length;
+ 
+  return propCount;
+  // Change code above this line
+}
+console.log(countProps({ name: "Mango", age: 2 }));
+
+
+function countTotalSalary(salaries) {
+  let totalSalary = 0;
+  // Change code below this line
+
+  const keys = Object.keys(salaries);
+  const values = Object.values(salaries);
+
+  for (const value of values) {
+    totalSalary += value;
+}
+
+   // Change code above this line
+  return totalSalary;
+}
+console.log(countTotalSalary({ kiwi: 200, poly: 50, ajax: 150 }));
+console.log(countTotalSalary({ mango: 100, poly: 150, alfred: 80 })); // 330
+
+const books = [
+  {
+    title: "The Last Kingdom",
+    author: "Bernard Cornwell",
+    rating: 8.38,
+  },
+  {
+    title: "Beside Still Waters",
+    author: "Robert Sheckley",
+    rating: 8.51,
+  },
+  {
+    title: "The Dream of a Ridiculous Man",
+    author: "Fyodor Dostoevsky",
+    rating: 7.75,
+  },
+];
+
+for (const book of books) {
+  // Об'єкт книги
+  //console.log(book);
+  // Назва
+  console.log(book.title);
+  // Автор
+  //console.log(book.author);
+  // Рейтинг
+  //console.log(book.rating);
+}
+
+const colors = [
+  { hex: "#f44336", rgb: "244,67,54" },
+  { hex: "#2196f3", rgb: "33,150,243" },
+  { hex: "#4caf50", rgb: "76,175,80" },
+  { hex: "#ffeb3b", rgb: "255,235,59" },
+];
+
+const hexColors = [];
+const rgbColors = [];
+//const keys = Object.keys(colors);
+//console.log(keys);
+// Change code below this line
+
+for (const color of colors) {
+  hexColors.push(color.hex);
+  rgbColors.push(color.rgb);
+}
+  console.log(hexColors);
+  console.log(rgbColors)
+
+
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+function getProductPrice(productName) {
+  // Change code below this line
+  for (const product of products) {
+     
+    if (product.name === productName) {
+      return product.price;
+    } 
+  }
+      return "null";
+}
+  // Change code above this line
+
+console.log(getProductPrice("Radar"));
+console.log(getProductPrice("Engine"));
+console.log(getProductPrice("Scanner"));
+
+
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+
+
+function getAllPropValues(propName) {
+  // Change code below this line
+
+  const valueArray = []; 
+  
+
+  for (const product of products) {
+    if (product.hasOwnProperty([propName])) {
+      
+      let valuesOfPropName = product[propName];
+      
+      valueArray.push(valuesOfPropName);
+    }
+  }
+  return valueArray;
+}
+  // Change code above this line
+
+console.log(getAllPropValues("name")); //["Radar", "Scanner", "Droid", "Grip"])
+console.log(getAllPropValues("quantity"));
+console.log(getAllPropValues("price"));
+console.log(getAllPropValues("category"));
+
+
+
+const products = [
+  { name: "Radar", price: 1300, quantity: 4 },
+  { name: "Scanner", price: 2700, quantity: 3 },
+  { name: "Droid", price: 400, quantity: 7 },
+  { name: "Grip", price: 1200, quantity: 9 },
+];
+
+function calculateTotalPrice(productName) {
+  // Change code below this line
+
+  let totalAmount = 0;
+
+  for (const product of products) {
+
+    let nameToFind = product.name
+   
+    if (nameToFind === productName) {
+      
+      totalAmount = product.price * product.quantity
+  
+    }
+    
+    // Change code above this line
+  }
+  return totalAmount;
+}
+
+console.log(calculateTotalPrice("Blaster"));// 0
+console.log(calculateTotalPrice("Radar"));// 5200)
+
+
+
+
+const highTemperatures = {
+  yesterday: 28,
+  today: 26,
+  tomorrow: 33,
+};
+// Change code below this line
+
+const {yesterday, today, tomorrow } = highTemperatures;
+
+//const yesterday = highTemperatures.yesterday;
+//const today = highTemperatures.today;
+//const tomorrow = highTemperatures.tomorrow;
+
+// Change code above this line
+const meanTemperature = (yesterday + today + tomorrow) / 3;
+
+console.log(meanTemperature);
+*/
+
+
+
+
+
+
+/*
+const cart = {
+  items: [],
+  getItems() { 
+    return this.items;
+  },
+  add(product) {
+    this.items.push(product);
+  },
+  remove(productName) { },
+  clear() { },
+  countTotalPrice() { },
+  increaseQuantity(productName) { },
+  decreaseQuantity(productName) { },
+};
+
+
+cart.add({ name: "apple", price: 50 });
+cart.add({ name: "lemon", price: 60 });
+cart.add({ name: "peach", price: 60 });
+cart.add({ name: "tomato", price: 110 });
+
+
+console.table(cart.getItems());
+*/
