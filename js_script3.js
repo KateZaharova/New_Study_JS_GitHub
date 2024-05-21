@@ -213,7 +213,7 @@ const atTheOldToad = {
 
 console.log(atTheOldToad.updatePotionName("Dragon breath", "Polymorth"))// ["Speed potion", "Polymorth", "Stone skin"]
 console.log(atTheOldToad.updatePotionName("Stone skin", "Invisibility"))//,  ["Speed potion", "Polymorth", "Invisibility"])
-  */
+
 
 const atTheOldToad = {
   potions: [
@@ -242,11 +242,12 @@ const atTheOldToad = {
       if (potion.name === potionName) {
         
         let potionIndex = this.potions.indexOf(potion);
-        console.log(potionIndex);
+       // console.log(potionIndex);
 
         this.potions.splice(potionIndex, 1)
         return this.potions
       }
+      
     } 
     return `Potion ${potionName} is not in inventory!`
   },
@@ -254,8 +255,8 @@ const atTheOldToad = {
   updatePotionName(oldName, newName) {
 
     for (const potion of this.potions) {
-     // console.log(potion)
-     if (potion.name === oldName) {
+
+      if (potion.name === oldName) {
        
        potion.name = newName; 
 
@@ -267,13 +268,13 @@ const atTheOldToad = {
   // Change code above this line
 };
 
-console.log(atTheOldToad.getPotions());
-//console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }));
-//console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }));
+//console.log(atTheOldToad.getPotions());
+console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }));
+console.log(atTheOldToad.addPotion({ name: "Power potion", price: 270 }));
 //console.log(atTheOldToad.addPotion({ name: "Stone skin", price: 240 }))//, повертає рядок "Error! Potion Stone skin is already in your inventory!")
 //console.log(atTheOldToad.removePotion("Stone skin")) // [ { name: "Speed potion", price: 460 }, { name: "Stone skin", price: 520 } ])
 //console.log(atTheOldToad.updatePotionName("Invisible", "Polymorth"))// [{ name: "Speed potion", price: 460 }, { name: "Polymorth", price: 780 }, { name: "Stone skin", price: 520 } ]
-console.log(atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"))//,  [{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Invulnerability potion", price: 520 } ]
+//console.log(atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"))//,  [{ name: "Speed potion", price: 460 }, { name: "Dragon breath", price: 780 }, { name: "Invulnerability potion", price: 520 } ]
 
 /*const atTheOldToad = {
   potions: [
@@ -321,12 +322,9 @@ console.log(atTheOldToad.updatePotionName("Stone skin", "Invulnerability potion"
 
   },
   // Change code above this line
-};*/
+};
 
 
-
-
-/*
 const bookShelf = {
   books: ["Останнє королівство"],
   getBooks() {
