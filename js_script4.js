@@ -170,7 +170,7 @@ const result = filter([1, 2, 3, 4, 5, 6, 7, 8, 9], function (value){
     return value >= 5;
 }
 );
-console.log(result);*/
+console.log(result);*
 
 const letItBe = function (array, cb) {
     let newArray = [];
@@ -188,3 +188,26 @@ const result = letItBe([15,25,24,12,13,0,18,19,55], function (element) {
 })
 
 console.log(result);
+
+
+const mainFunction = function (array, test) {
+    let newArray = [];
+    let minItem=array[0]
+
+    for (const a of array) {
+        console.log(a)
+        if (test(a)) {
+        
+            newArray.push(a);
+}
+    }
+    console.log(newArray)
+    return Math.max(...newArray);
+};
+
+const additionalFunction = mainFunction([85,17,35,14,5,20,15,16,71,85,13], function (value) {
+    return value%2===0;
+});
+
+console.log(additionalFunction);
+*/
