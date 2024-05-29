@@ -211,3 +211,29 @@ const additionalFunction = mainFunction([85,17,35,14,5,20,15,16,71,85,13], funct
 
 console.log(additionalFunction);
 */
+
+const fruits = [
+    { name: "apples", price: 150, quantity: 100, isFresh: true },
+    { name: "tomato", price: 50, quantity: 300, isFresh: true },
+    { name: "mango", price: 400, quantity: 50, isFresh: false },
+    { name: "banana", price: 200, quantity: 80, isFresh: true },
+];
+
+let getFruitsWithName = function (qweqwe) {
+    return qweqwe.name=== "banana";
+}
+
+let mainFunction = function (array, test) {
+    let newArray = [];
+
+    for (const a of array) {
+
+        if (test(a)) {
+            newArray.push(a)
+        }
+    } return newArray;
+}
+
+let result = mainFunction(fruits, getFruitsWithName);
+    
+console.log(result);
