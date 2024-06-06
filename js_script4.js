@@ -210,7 +210,7 @@ const additionalFunction = mainFunction([85,17,35,14,5,20,15,16,71,85,13], funct
 });
 
 console.log(additionalFunction);
-*/
+
 
 const fruits = [
     { name: "apples", price: 150, quantity: 100, isFresh: true },
@@ -237,3 +237,19 @@ let mainFunction = function (array, test) {
 let result = mainFunction(fruits, getFruitsWithName);
     
 console.log(result);
+
+const numbers = [1, 2, 3, 4, 5, 6];
+numbers.forEach(function (number) {
+        console.log('number', number);
+});
+
+console.log(numbers)*/
+
+const numbers = [1, 2, 3, 4, 5, 6];
+
+const doubleNums = numbers.map(number => {
+    console.log(number);
+    return number * 2;
+});
+console.log('numbers:', numbers);
+console.log('doubleNums:', doubleNums);
