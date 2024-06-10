@@ -243,13 +243,31 @@ numbers.forEach(function (number) {
         console.log('number', number);
 });
 
-console.log(numbers)*/
+console.log(numbers)
 
 const numbers = [1, 2, 3, 4, 5, 6];
-
+//map перебирает поєлементно массив
+//возвращает новый массив такой же длины
+// не изменяет старый массив
 const doubleNums = numbers.map(number => {
     console.log(number);
-    return number * 2;
+    return number*3;
 });
 console.log('numbers:', numbers);
 console.log('doubleNums:', doubleNums);
+*/
+
+
+const players = [
+    { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
+    { id: 'player-2', name: 'Poly', timePlayed: 470, points: 92, online: true },
+    { id: 'player-3', name: 'Kiwi', timePlayed: 230, points: 48, online: true },
+    { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false },
+    { id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: true },
+]
+
+const playerNames = players.map(player => player.points);
+console.log(`playerNames:`, playerNames);
+
+const res = players.map(({ name, online }) => ({ name, online }));
+console.log(res);
