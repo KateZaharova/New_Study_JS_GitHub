@@ -266,8 +266,27 @@ const players = [
     { id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: true },
 ]
 
-const playerNames = players.map(player => player.points);
-console.log(`playerNames:`, playerNames);
+const playerToUpdate = 'player-4';
 
-const res = players.map(({ name, online }) => ({ name, online }));
-console.log(res);
+const updatePLayer = players.map(player => {
+
+    if (player.id === playerToUpdate) {
+        return {
+            ...player,
+            id: player.id = 'X! New name',
+            name: player.name = 'Cherry',
+        }
+    }
+    return player;
+});
+console.table(updatePLayer);
+
+/*const res = players.map(player => ({
+          ...player,
+        name: player.name + 123,
+        points: player.points * 1.1,
+        online: !player.online,
+        timePlayed: player.timePlayed/2,
+    }))
+
+console.table(res);*/
