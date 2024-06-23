@@ -389,8 +389,10 @@ const itemToFind = "player-3";
 //const findPlayer = players.find(player => player.id === itemToFind);
 //console.log(findPlayer);
 
-const findPLayerById = (allPLayer, playerId) =>
-allPLayer.find(players=>players.id===playerId);
+const findPLayerById = (allPLayer, playerId) => {
+    return allPLayer.find(({ id })=>id===playerId);
+}
+
 
 console.log(findPLayerById(players, "player-3"));
 console.log(findPLayerById(players, "player-5"));
