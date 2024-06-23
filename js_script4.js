@@ -255,7 +255,7 @@ const doubleNums = numbers.map(number => {
 });
 console.log('numbers:', numbers);
 console.log('doubleNums:', doubleNums);
-*/
+
 
 
 const players = [
@@ -266,7 +266,53 @@ const players = [
     { id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: true },
 ]
 
-const playerToUpdate = 'player-4';
+const levelTimePlayed = 200;
+
+const newLevelTime = players.map(player => {
+    if (player.timePlayed > levelTimePlayed) {
+        return {
+            ...player,
+            name: player.name + "SuperStar",
+            points: player.points + 200,
+            online: true,
+        }
+    }
+    return player
+});
+console.table(newLevelTime);
+
+
+const playerNew = players.map(player => {
+    if (player.name === playerToUpdate) {
+        return {
+            ...player,
+            points: player.points * 3
+        }
+    }
+    return player;
+}
+);
+console.table(playerNew);
+
+
+
+const newPlayer = players.map(player =>
+    player.name === playerToUpdate
+        ? { ...player, points: player.points * 1.1 }
+        : player
+);
+console.table(newPlayer);
+
+const secondPlayer = players.map(player => ({
+        ...player,
+        id: player.id + "111",
+        name: player.name + "star",
+        timePlayed: player.timePlayed * 2,
+        points: player.points / 10,
+        online: !player.online
+    
+}));
+console.table(secondPlayer);
 
 const updatePLayer = players.map(player => {
 
@@ -281,7 +327,7 @@ const updatePLayer = players.map(player => {
 });
 console.table(updatePLayer);
 
-/*const res = players.map(player => ({
+const res = players.map(player => ({
           ...player,
         name: player.name + 123,
         points: player.points * 1.1,
@@ -289,4 +335,67 @@ console.table(updatePLayer);
         timePlayed: player.timePlayed/2,
     }))
 
-console.table(res);*/
+console.table(res);
+
+const newPlayer = players.map(player =>
+    player.id === playerToUpdate
+        ? { ...player, id: player.id = 'X! New name', }
+        : player,
+);
+console.table(newPlayer);
+
+const numbers = [1, 5, 6, 7, 9, 10, 15, 20, 25, 28];
+
+const filteredNumbers = numbers.filter(number => number < 10 || number >= 25);
+
+console.log(filteredNumbers);
+
+
+
+const playersOnline = players.filter(player => !player.online)
+console.table(playersOnline);
+
+const player2Online = players.filter(({ online }) => !online);
+console.table(player2Online);
+
+console.table(players);
+
+//м - д filter:
+// поєлементно перебирает оригинальный массив
+// возвращает новый массив (с элементами или пустой)
+// добавляет в возвращаемый массив элементы, которые удовлетворяют условию колбэк-функции
+// - если колбэк вернул true-  элемент добавляется в возвращаемый массив
+// - если кольэк вернул false - элемент не добавляется в возвращаемый массив
+
+// м-д find
+// - поэлементно перебирает оригинальный массив
+// - возвращает первый элемент, который удовлетворяет условию или undefined*/
+
+const number1 = [1, 4, 5, 6, 8, 9, 7, 11, 12, 15, 18];
+
+const findNumber = number1.find(number =>  number < 7 );
+//console.log(findNumber);
+
+const players = [
+    { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
+    { id: 'player-2', name: 'Poly', timePlayed: 470, points: 92, online: true },
+    { id: 'player-3', name: 'Kiwi', timePlayed: 230, points: 48, online: true },
+    { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false },
+    { id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: true },
+];
+
+const itemToFind = "player-3";
+
+//const findPlayer = players.find(player => player.id === itemToFind);
+//console.log(findPlayer);
+
+const findPLayerById = (allPLayer, playerId) =>
+allPLayer.find(players=>players.id===playerId);
+
+console.log(findPLayerById(players, "player-3"));
+console.log(findPLayerById(players, "player-5"));
+
+const findTheNumber = (allNumbers) =>
+    allNumbers.find(number => number > 5);
+
+console.log(findTheNumber(number1))
