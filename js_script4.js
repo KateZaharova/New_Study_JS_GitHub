@@ -365,11 +365,11 @@ console.table(players);
 // возвращает новый массив (с элементами или пустой)
 // добавляет в возвращаемый массив элементы, которые удовлетворяют условию колбэк-функции
 // - если колбэк вернул true-  элемент добавляется в возвращаемый массив
-// - если кольэк вернул false - элемент не добавляется в возвращаемый массив
+// - если колбэк вернул false - элемент не добавляется в возвращаемый массив
 
 // м-д find
 // - поэлементно перебирает оригинальный массив
-// - возвращает первый элемент, который удовлетворяет условию или undefined*/
+// - возвращает первый элемент, который удовлетворяет условию или undefined
 
 const number1 = [1, 4, 5, 6, 8, 9, 7, 11, 12, 15, 18];
 
@@ -400,4 +400,43 @@ console.log(findPLayerById(players, "player-5"));
 const findTheNumber = (allNumbers) =>
     allNumbers.find(number => number > 5);
 
-console.log(findTheNumber(number1))
+console.log(findTheNumber(number1));
+*/
+
+// м-д every - поэлементно перебирает оригинальный массив, если все елементы удовлетворяют условию
+// возвращает true, иначе false.
+
+const players = [
+    { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
+    { id: 'player-2', name: 'Poly', timePlayed: 470, points: 92, online: false },
+    { id: 'player-3', name: 'Kiwi', timePlayed: 230, points: 48, online: false },
+    { id: 'player-4', name: 'Ajax', timePlayed: 150, points: 71, online: false },
+    { id: 'player-5', name: 'Chelsy', timePlayed: 80, points: 48, online: false },
+];
+
+const nameToFind = "Kiwi";
+
+const everyTimePLayed = players.some(player => player.timePlayed > 100);
+console.log(everyTimePLayed);
+
+
+
+/*const everyPlayer = players.every(player=>player.nameToFind)
+console.log(everyPlayer);
+
+const playerOnline = players.every(player => player.online);
+console.log(playerOnline);
+
+const playerId = "player-2";
+
+const everyId = players.every(player => player.playerId);
+console.log(everyId);*/
+
+// м-д some - перебирає весь оригінальний  масив, повертає true, якщо є хоч 
+// 1 елемент, що задовольняє умові
+
+const someName = players.some(player => player.name);
+console.log(someName);
+
+const isAnyOnline = players.some(player => player.online);
+console.log(isAnyOnline);
