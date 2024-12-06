@@ -1,0 +1,50 @@
+[
+{
+"id": 1,
+"name": "Midway Island, American Samoa",
+"timezone": "Pacific/Midway",
+"utc_offset": -11
+},
+{
+"id": 2,
+"name": "Hawaii",
+"timezone": "Pacific/Honolulu",
+"utc_offset": -10
+},
+{
+"id": 3,
+"name": "Alaska",
+"timezone": "America/Anchorage",
+"utc_offset": -8
+},
+{
+"id": 4,
+"name": "Baja California",
+"timezone": "America/Tijuana",
+"utc_offset": -7
+},
+{
+"id": 5,
+"name": "Pacific Time US and Canada",
+"timezone": "America/Los_Angeles",
+"utc_offset": -7
+},
+{
+"id": 6,
+"name": "Arizona",
+"timezone": "America/Phoenix",
+"utc_offset": -7
+},
+{
+"id": 7,
+"name": "Chihuahua, La Paz, Mazatlan",
+"timezone": "America/Chihuahua",
+"utc_offset": -6
+},
+{
+"id": 8,
+"name": "Mountain Time US and Canada",
+"timezone": "America/Denver",
+"utc_offset": -6
+}
+]

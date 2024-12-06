@@ -1749,4 +1749,37 @@ cart.add({ name: "tomato", price: 110 });
 
 
 console.table(cart.getItems());
+
+
+function printNumber(n) {
+  console.log(n);
+  if (n > 0) {
+    printNumber(n - 1);
+}
+}
+
+printNumber(5);
 */
+
+const btn_up = document.querySelector(".scroll-up-btn");
+const btn_down = document.querySelector(".scroll-down-btn");
+
+btn_up.addEventListener('click', () => {
+  document.documentElement.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  })
+});
+
+console.log(btn_up,"btn_up")
+
+
+
+btn_down.addEventListener('click', () => {
+  document.documentElement.scrollTo({
+    top: 10000,
+    behavior: "smooth",
+  })
+});
+
+console.log(btn_down,"btn_down")

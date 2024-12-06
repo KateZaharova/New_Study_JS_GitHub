@@ -1,10 +1,76 @@
-body {
-    font-family: sans-serif;
+* {
     line-height: 1.5;
+    padding:10px;
+    margin:10px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 
-h1{
+h1, h2{
 font-weight: 80px;
 color: red;
+justify-content: space-around;
+flex-direction: row;
+}
+
+image{
+    object-fit:calc(50%);
+};
+
+section{
+    height:75vh;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    
+    font-size: 48px;
+};
+
+.section1{
+    background-color: green;
+    height: 75vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+};
+
+.section2{
+    background-color: blue;
+};
+
+.section3{
+    background-color: red;
+};
+
+.section4{
+    background-color: aqua;
+};
+
+.section5{
+    background-color: blueviolet;
+};
+
+.scroll-up-button{
+    all:unset;
+    position: fixed;
+    bottom: 25px;
+    right: 30px;
+    height:90px;
+    width: 90px;
+    background-color: #080808;
+    border-radius: 99%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+};
+
+.scroll-up-button .arrow-up{
+    width:28px;
+    height:28px;
+    border-left: 4px solid #f9f9f9;
+    border-bottom: 4px solid #f9f9f9;
+    transform: rotate(135deg);
+    margin-bottom: -14px;
+    pointer-events: none;
 }

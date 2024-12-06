@@ -406,7 +406,7 @@ console.log(findTheNumber(number1));
 // м-д every - поэлементно перебирает оригинальный массив, если все елементы удовлетворяют условию
 // возвращает true, иначе false.
 
-const players = [
+/*const players = [
     { id: 'player-1', name: 'Mango', timePlayed: 310, points: 54, online: false },
     { id: 'player-2', name: 'Poly', timePlayed: 470, points: 92, online: false },
     { id: 'player-3', name: 'Kiwi', timePlayed: 230, points: 48, online: false },
@@ -417,7 +417,7 @@ const players = [
 const nameToFind = "Kiwi";
 
 const everyTimePLayed = players.some(player => player.timePlayed > 100);
-console.log(everyTimePLayed);
+console.log(everyTimePLayed);*/
 
 
 
@@ -435,8 +435,117 @@ console.log(everyId);*/
 // м-д some - перебирає весь оригінальний  масив, повертає true, якщо є хоч 
 // 1 елемент, що задовольняє умові
 
-const someName = players.some(player => player.name);
+/*const someName = players.some(player => player.name);
 console.log(someName);
 
 const isAnyOnline = players.some(player => player.online);
-console.log(isAnyOnline);
+console.log(isAnyOnline);*/
+
+//Create an empty array.
+
+let jsonData = {
+    "Timezones":
+[
+    {
+        "id": 1,
+        "name": "Midway Island, American Samoa",
+        "timezone": "Pacific/Midway",
+        "utc_offset": -11
+    },
+    {
+        "id": 2,
+        "name": "Hawaii",
+        "timezone": "Pacific/Honolulu",
+        "utc_offset": -10
+    },
+    {
+        "id": 3,
+        "name": "Alaska",
+        "timezone": "America/Anchorage",
+        "utc_offset": -8
+    },
+    {
+        "id": 4,
+        "name": "Baja California",
+        "timezone": "America/Tijuana",
+        "utc_offset": -7
+    },
+    {
+        "id": 5,
+        "name": "Pacific Time US and Canada",
+        "timezone": "America/Los_Angeles",
+        "utc_offset": -7
+    },
+    {
+        "id": 6,
+        "name": "Arizona",
+        "timezone": "America/Phoenix",
+        "utc_offset": -7
+    },
+    {
+        "id": 7,
+        "name": "Chihuahua, La Paz, Mazatlan",
+        "timezone": "America/Chihuahua",
+        "utc_offset": -6
+    },
+    {
+        "id": 8,
+        "name": "Mountain Time US and Canada",
+        "timezone": "America/Denver",
+        "utc_offset": -6
+    }
+]
+};
+
+/*let createOptions = (arr, targetSelector) => (targetSelector).append(arr.map(o => `<option value="${o.utc_offset}">${o.America/Denver} + ${o.name}</option>`));
+console.log(createOptions(jsonData.Timezones, 'select.Timezones'));*/
+
+const elements = {
+    form: document.querySelector(".select-form"),
+    div: document.querySelector(".div-select")
+};
+
+ async function getData(data = {}) {
+      const response = await fetch(
+        "https://dev-viewer-api.eyesofai.com/api/v1/dictionary/timezones",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        }
+      );
+     each(data,
+            function(i, v) {
+                (elements.form).append('<option value="' + v.utc_offset + '">' + v.timezone + v.name + '</option>');
+            });
+    };
+      //return response.json();
+    
+
+//console.log(getData);
+
+
+/*
+$(document).ready(function () {
+    $('#id').empty();
+    $.get("https://dev-viewer-api.eyesofai.com/api/v1/dictionary/timezones").done(function(data){
+        $.each(data,
+            function(i, v) {
+                $('#id').append('<option value="' + v.utc_offset + '">' + v.timezone + v.name + '</option>');
+            });
+    });
+});*/
+
+/*var list = [];
+
+//Add each option from JSON to the list array
+$.each(jsonData, function (key, value) {
+    list.push(key);
+});
+
+//For every option in the list, add it into the select menu
+$.each(list, function (key, value) {
+    $("#my-select-element").append("<option value='" + value + "'>" + value + "</option>");
+});*/
